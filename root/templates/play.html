@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lifest Prison Break</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .red-cell {
+            background: #F00; /* Or some other color */
+        }
+    </style>
+
+    <script>
+        function place(domObj){
+            if(domObj.style.backgroundColor=="white")
+                domObj.style.backgroundColor="lightblue";
+            else if(domObj.style.backgroundColor=="lightblue")
+                domObj.style.backgroundColor="white";
+        }
+    </script>
+</head>
+<body>
+<div class="container" style="padding: 20px; width: 80%; border: 1px solid black; margin: auto;">
+    <div class="headtitle" style="padding: 2px; width: 100%; border: 1px solid black; margin: auto; text-align: center">
+        <h2>Title Setting</h2>
+    </div>
+    <div class="inputfield" style="padding: 2px; width: 100%; border: 1px solid black; margin: auto; text-align: center">
+        <table cellpadding="10" style="width: 100%; margin: auto; text-align: center;">
+            <tr>
+                <td style="background-color:white;" onclick="place(this)"><p id="a1"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="b1"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="c1"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="d1"></p></td>
+            </tr>
+            <tr>
+                <td style="background-color:white;" onclick="place(this)"><p id="a2"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="b2"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="c2"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="d2"></p></td>
+            </tr>
+            <tr>
+                <td style="background-color:white;" onclick="place(this)"><p id="a3"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="b3"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="c3"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="d3"></p></td>
+            </tr>
+            <tr>
+                <td style="background-color:white;" onclick="place(this)"><p id="a4"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="b4"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="c4"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="d4"></p></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            var input_code = "{{input_code}}";
+            var str_enc = "abcdefghijklmnopqrstuvwxyz";
+            document.getElementById("a1").innerHTML = str_enc.search(input_code[0]);
+            document.getElementById("a2").innerHTML = str_enc.search(input_code[1]);
+            document.getElementById("a3").innerHTML = str_enc.search(input_code[2]);
+            document.getElementById("a4").innerHTML = str_enc.search(input_code[3]);
+            document.getElementById("b1").innerHTML = str_enc.search(input_code[4]);
+            document.getElementById("b2").innerHTML = str_enc.search(input_code[5]);
+            document.getElementById("b3").innerHTML = str_enc.search(input_code[6]);
+            document.getElementById("b4").innerHTML = str_enc.search(input_code[7]);
+            document.getElementById("c1").innerHTML = str_enc.search(input_code[8]);
+            document.getElementById("c2").innerHTML = str_enc.search(input_code[9]);
+            document.getElementById("c3").innerHTML = str_enc.search(input_code[10]);
+            document.getElementById("c4").innerHTML = str_enc.search(input_code[11]);
+            document.getElementById("d1").innerHTML = str_enc.search(input_code[12]);
+            document.getElementById("d2").innerHTML = str_enc.search(input_code[13]);
+            document.getElementById("d3").innerHTML = str_enc.search(input_code[14]);
+            document.getElementById("d4").innerHTML = str_enc.search(input_code[15]);
+        </script>
+    </div>
+</div>
+</body>
+</html>
