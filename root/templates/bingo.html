@@ -74,7 +74,7 @@
                     encoded = encoded + str_enc[window.input_num[i]];
                 }
 
-                var url = "/play?code=" + encoded;
+                var url = "/play?code=" + encoded + "&ts=" + Date.now();
                 window.location = url;
               } else {
                 alert("뭔가 이상한데?")
@@ -94,7 +94,7 @@
         function submit_random() {
             var str_enc = "bcdefghijklmnopq";
             var shuffled = shuffle(str_enc);
-            var url = "/play?code=" + shuffled;
+            var url = "/play?code=" + shuffled + "&ts=" + Date.now();
             window.location = url;
         };
     </script>

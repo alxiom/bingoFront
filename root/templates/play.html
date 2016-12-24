@@ -10,17 +10,14 @@
             border-collapse: collapse;
             font-size: 20px;
         }
-        .red-cell {
-            background: #F00; /* Or some other color */
-        }
     </style>
 
     <script>
         function place(domObj){
-            if(domObj.style.backgroundColor=="")
+            if(domObj.style.backgroundColor=="white")
                 domObj.style.backgroundColor="lightblue";
             else if(domObj.style.backgroundColor=="lightblue")
-                domObj.style.backgroundColor="";
+                domObj.style.backgroundColor="white";
         }
     </script>
 </head>
@@ -32,7 +29,7 @@
     <div class="inputfield" style="padding: 2px; width: 100%; border: 1px solid black; margin: auto; text-align: center">
         <table cellpadding="10" style="width: 100%; margin: auto; text-align: center;">
             <tr>
-                <td onclick="place(this)"><p id="a1"></p></td>
+                <td style="background-color:white;" onclick="place(this)"><p id="a1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="b1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="c1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="d1"></p></td>
@@ -58,13 +55,14 @@
         </table>
 
     </div>
-    <div class="noticefield" style="padding: 10px; width: 100%; border: 0px solid black; margin: auto; text-align: center">
-        <p id="tn"></p>
+    <div class="noticefield" style="padding: 10px; width: 100%; border: 0px solid black; margin: auto; text-align: right">
+        <p id="tn"></p><p id="ts"></p>
     </div>
 
 </div>
 <script type="text/javascript">
     var input_code = "{{input_code}}";
+    var time_stamp = "{{time_stamp}}";
     var str_enc = "abcdefghijklmnopqrstuvwxyz";
     document.getElementById("a1").innerHTML = str_enc.search(input_code[0]);
     document.getElementById("a2").innerHTML = str_enc.search(input_code[1]);
@@ -82,7 +80,7 @@
     document.getElementById("d2").innerHTML = str_enc.search(input_code[13]);
     document.getElementById("d3").innerHTML = str_enc.search(input_code[14]);
     document.getElementById("d4").innerHTML = str_enc.search(input_code[15]);
-    document.getElementById("tn").innerHTML = Date();
+    document.getElementById("tn").innerHTML = new Date(Number(time_stamp));
 </script>
 </body>
 </html>

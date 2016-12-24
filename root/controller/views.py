@@ -12,4 +12,5 @@ def index():
 @app.route('/play', methods=['GET', 'POST'])
 def start():
     input_code = request.args.get('code')
-    return render_template('play.html', input_code=input_code)
+    time_stamp = request.args.get('ts')
+    return render_template('play.html', input_code=input_code, time_stamp=time_stamp)
