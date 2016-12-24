@@ -17,10 +17,10 @@
 
     <script>
         function place(domObj){
-            if(domObj.style.backgroundColor=="white")
+            if(domObj.style.backgroundColor=="")
                 domObj.style.backgroundColor="lightblue";
             else if(domObj.style.backgroundColor=="lightblue")
-                domObj.style.backgroundColor="white";
+                domObj.style.backgroundColor="";
         }
     </script>
 </head>
@@ -32,7 +32,7 @@
     <div class="inputfield" style="padding: 2px; width: 100%; border: 1px solid black; margin: auto; text-align: center">
         <table cellpadding="10" style="width: 100%; margin: auto; text-align: center;">
             <tr>
-                <td style="background-color:white;" onclick="place(this)"><p id="a1"></p></td>
+                <td onclick="place(this)"><p id="a1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="b1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="c1"></p></td>
                 <td style="background-color:white;" onclick="place(this)"><p id="d1"></p></td>
