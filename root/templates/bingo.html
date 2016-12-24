@@ -75,10 +75,27 @@
                 }
 
                 var url = "/play?code=" + encoded;
-                window.location = url
+                window.location = url;
               } else {
                 alert("뭔가 이상한데?")
               }
+        };
+        function shuffle(string) {
+            var parts = string.split('');
+            for (var i = parts.length; i > 0;) {
+                var random = parseInt(Math.random() * i);
+                var temp = parts[--i];
+                parts[i] = parts[random];
+                parts[random] = temp;
+            }
+            return parts.join('');
+        }
+
+        function submit_random() {
+            var str_enc = "bcdefghijklmnopq";
+            var shuffled = shuffle(str_enc);
+            var url = "/play?code=" + shuffled;
+            window.location = url;
         };
     </script>
 
@@ -124,7 +141,7 @@
         * 같은 숫자가 있으면 제출이 안되요
     </div>
     <div class="submitfield" style="padding: 10px; width: 100%; border: 0px solid black; margin: auto; text-align: center">
-        <input type="button" id="submit" onclick="submit_bingo();" value="제출하기">
+        <input type="button" id="random" onclick="submit_random();" value="랜덤제출"> <input type="button" id="submit" onclick="submit_bingo();" value="제출하기">
     </div>
 </div>
 </body>
